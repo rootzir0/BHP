@@ -39,7 +39,7 @@ if __name__ == '__main__':
     else:
         buffer = sys.stdin.read()
 
-    nc = NetCat(args,buffer.encode)
+    nc = NetCat(args,buffer.encode) # type: ignore
 
     class NetCat:
         def __init__(self,args,buffer=None):
