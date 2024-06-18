@@ -70,3 +70,39 @@ def send(self):
                 response += data.decode()
                 if recv_len < 4096:
                     break
+
+                if response:(response)
+                buffer = input('>')
+                buffer += '\n'
+            self.socket.send(buffer.encode())
+    except KeyboardInterrupt:
+        print('User terminated')
+        self.socket.close()
+        sys.exit()
+
+#Listen-Method
+def listen(self):
+    self.socket.bind((self.args.target,self.args.port))
+
+    self.socket.listen(5)
+    while True:
+
+        client_socket, _ = self.socket.accept()
+        client_thread = threading.Thread(
+                target=self.handle, args=(client_socket,)
+            )
+        client_thread.start()
+
+#Logic Implementation
+def handle(self,client_socket):
+    if self.args.execute:
+
+        output = execute(self,args.execute)
+        client_socket.send(output.encode())
+
+    elif self.args.upload:
+        file_buffer = b"
+        
+        
+        
+        "
