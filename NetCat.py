@@ -7,6 +7,7 @@ import sys
 import textwrap
 import threading
 
+
 def execute(cmd):
     cmd = cmd.strip()
     if not cmd:
@@ -35,13 +36,14 @@ if __name__ == '__main__':
     parser.add_argument('-u','--upload',help='upload file')
     args = parser.parse_args()
     if args.listen:
-        buffer = ''
+        buffer = ""
     else:
         buffer = sys.stdin.read()
 
-    nc = NetCat(args,buffer.encode) # type: ignore
+    nc = NetCat(args, buffer.encode()) # type: ignore
+    nc.run()
 
-    class netcat:
+    class NetCat:
         def __init__(self,args,buffer=None):
             self.args = args
             self.buffer = buffer
