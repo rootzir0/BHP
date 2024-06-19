@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     nc = NetCat(args,buffer.encode) # type: ignore
 
-    class NetCat:
+    class netcat:
         def __init__(self,args,buffer=None):
             self.args = args
             self.buffer = buffer
